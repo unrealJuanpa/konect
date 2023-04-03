@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/contactos/' element={ <CompShowContactos/>}/>
+          <Route path='/' element={ <CompShowContactos/>}/>
           <Route path='/contactos/create' element={ <CompCreateContactos/>}/>
           <Route path='/contactos/edit/:id' element={ <CompEditContactos/>}/>
 
