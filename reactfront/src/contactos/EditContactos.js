@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const URI = 'http://localhost:8000/contactos/'
 
@@ -44,14 +45,17 @@ const CompEditContactos = () => {
 
     return (
         <div className='container text-left'>
+            <br></br>
+            <br></br>
             <div class="card-header">
                 <h5>Edit New Contactos</h5>
             </div>
 
             <div class="card-body">
                 <h5>Contactos Data</h5>
+                <br></br>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-6 mx-auto">
                         <form onSubmit={update}>
                             <div class="form-group">
                                 <label>Nombre</label>
@@ -77,6 +81,7 @@ const CompEditContactos = () => {
                                 <label>Linkedin</label>
                                 <input value={linkedin} onChange={ (e) => setLinkedin(e.target.value) } type="text" class="form-control" placeholder="Enter Linkedin"></input>
                             </div>
+                            <br></br>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
                     </div>

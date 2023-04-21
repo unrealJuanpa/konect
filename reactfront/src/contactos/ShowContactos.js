@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const URI = 'http://localhost:8000/contactos/'
 
@@ -23,13 +24,18 @@ const CompShowContactos = () => {
 
     return (
         <div className='container'>
+            <br></br>
+            <br></br>
             <div className="card-header text-left">
                 <h5>Contactos Controll</h5>
                 <span className="d-block m-t-5">Use the different action buttons to manage Contactos!</span>
                 <br></br>
-                <Link to="/contactos/create" type="button" className="btn btn-info" data-toggle="tooltip">Create new Register</Link>
+                <Link to="/contactos/create" type="button" className="btn btn-success" data-toggle="tooltip">Create new Register</Link>
             </div>
 
+            <br></br>
+            <br></br>
+            <br></br>
             <div class="card-block table-border-style">
                 <div class="table-responsive">
                     <table class="table table-hover">
@@ -55,10 +61,10 @@ const CompShowContactos = () => {
                                             <td>{dtyo.apellido}</td>
                                             <td>{dtyo.telefono}</td>
                                             <td>{dtyo.correo}</td>
-                                            <td>{dtyo.facebook}</td>
-                                            <td>{dtyo.linkedin}</td>
+                                            <td><a href={dtyo.facebook} target="_blank">{dtyo.facebook}</a></td>
+                                            <td><a href={dtyo.linkedin} target="_blank">{dtyo.linkedin}</a></td>
                                             <td>
-                                                <Link to={`/contactos/edit/${dtyo.id}`} className='btn btn-info'>Edit</Link>
+                                                <Link to={`/contactos/edit/${dtyo.id}`} className='btn btn-warning'>Edit</Link>
                                                 <button onClick={ () => deleteContactos(dtyo.id) } type="button" class="btn btn-danger" data-toggle="tooltip">Delete</button>
                                             </td>
                                         </tr>

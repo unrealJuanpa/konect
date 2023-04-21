@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const URI = 'http://localhost:8000/contactos/'
 
@@ -21,14 +23,17 @@ const CompCreateContactos = () => {
 
     return (
         <div className='container text-left'>
+            <br></br>
+            <br></br>
             <div class="card-header">
                 <h5>Create New Contactos</h5>
             </div>
 
             <div class="card-body">
                 <h5>Contactos Data</h5>
+                <br></br>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-6 mx-auto">
                         <form onSubmit={store}>
                             <div class="form-group">
                                 <label>Nombre</label>
@@ -54,6 +59,7 @@ const CompCreateContactos = () => {
                                 <label>Linkedin</label>
                                 <input value={linkedin} onChange={ (e) => setLinkedin(e.target.value) } type="text" class="form-control" placeholder="Enter Linkedin"></input>
                             </div>
+                            <br></br>
                             <button type="submit" class="btn btn-primary">Store</button>
                         </form>
                     </div>
